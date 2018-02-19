@@ -1,13 +1,13 @@
 "use strict";
 
 function Figure() {
-  var center = {};
+  this._center = {};
   this.setCenter = function(x, y) {
-    center.x = x;
-    center.y = y;
+    this._center.x = x;
+    this._center.y = y;
   };
   this.getCenter = function() {
-    return "{x: " + center.x + ", y: " + center.y + "}";
+    return "{x: " + this._center.x + ", y: " + this._center.y + "}";
   };
 }
 
