@@ -23,7 +23,7 @@
       "git add"
     ],
     "*.html": [
-      "js-beautify --indent-size 2 --replase",
+      "js-beautify -s 2 -r --html",
       "git add"]
   },
   "devDependencies": {
