@@ -18,6 +18,19 @@
   },
   "homepage": "https://github.com/gift-a/SSA-JS-tasks#readme",
   "lint-staged": {
-    "*.{js,json,css,md}": ["prettier --write", "git add"]
-  }
+    "*.{js,css,scss}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.html": [
+      "js-beautify --indent-size 2 --replase",
+      "git add"]
+  },
+  "devDependencies": {
+    "husky": "^0.14.3",
+    "js-beautify": "^1.7.5",
+    "lint-staged": "^7.0.0",
+    "prettier": "^1.10.2"
+  },
+  "dependencies": {}
 }
