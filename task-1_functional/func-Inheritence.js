@@ -14,14 +14,18 @@ function Figure() {
 
 function Rectangle(diagonal) {
   Figure.call(this);
+  this._diagonal = diagonal;
   this.info = function() {
-    console.log("center: " + this.getCenter() + ", diagonal: " + diagonal);
+    console.log(
+      "center: " + this.getCenter() + ", diagonal: " + this._diagonal
+    );
   };
 }
 
 function Circle(radius) {
   Figure.call(this);
+  this._radius = radius;
   this.info = function() {
-    console.log("center: " + this.getCenter() + ", radius: " + radius);
+    console.log("center: " + this.getCenter() + ", radius: " + this._radius);
   };
 }
