@@ -1,10 +1,10 @@
 "use strict";
 
 function random(min, max, delay, callback) {
-  var data;
+  var data, error;
   if (max < min) {
-    var error = new RangeError("min >= max");
-  } else var data = Math.round(Math.random() * (max - min) + min);
+    error = new RangeError("min >= max");
+  } else data = Math.round(Math.random() * (max - min) + min);
 
   setTimeout(callback, delay, error, data);
 }
