@@ -21,7 +21,7 @@ House.prototype.getInfo = function() {
 
 function HorseHouse(owner, horseName) {
   House.call(this, owner);
-  this._horsesIn = horsename & [horseName] || [];
+  this._horsesIn = horseName ? [horseName] : [];
 }
 HorseHouse.prototype = Object.create(House.prototype);
 HorseHouse.prototype.constructor = HorseHouse;
