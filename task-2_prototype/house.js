@@ -1,21 +1,21 @@
 function House(inhabitant) {
-  this._inhabitant = inhabitant;
+  this.inhabitant = inhabitant;
   this.doorType = "door";
-  this._doorOpened = false;
+  this._doorIsOpened = false;
 }
 House.prototype.openDoor = function() {
-  this._doorOpened = true;
+  this._doorIsOpened = true;
 };
 House.prototype.closeDoor = function() {
-  this._doorOpened = false;
+  this._doorIsOpened = false;
 };
 House.prototype.getInfo = function() {
   return (
-    this._inhabitant +
+    this.inhabitant +
     ' lives in the house with door type "' +
     this.doorType +
     '". Door opened:' +
-    this._doorOpened
+    this._doorIsOpened
   );
 };
 
