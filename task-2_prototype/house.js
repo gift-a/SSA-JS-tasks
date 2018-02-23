@@ -1,6 +1,6 @@
 function House(inhabitant) {
-  this.inhabitant = inhabitant;
-  this.doorType = "door";
+  this._inhabitant = inhabitant;
+  this._doorType = "door";
   this._doorIsOpened = false;
 }
 House.prototype.openDoor = function() {
@@ -11,9 +11,9 @@ House.prototype.closeDoor = function() {
 };
 House.prototype.getInfo = function() {
   return (
-    this.inhabitant +
+    this._inhabitant +
     ' lives in the house with door type "' +
-    this.doorType +
+    this._doorType +
     '". Door opened:' +
     this._doorIsOpened
   );
@@ -21,7 +21,7 @@ House.prototype.getInfo = function() {
 
 function HorseHouse(owner, horseName) {
   House.call(this, owner);
-  this._horsesIn = [horseName];
+  this._horsesIn = horsename & [horseName] || [];
 }
 HorseHouse.prototype = Object.create(House.prototype);
 HorseHouse.prototype.constructor = HorseHouse;
@@ -40,7 +40,7 @@ HorseHouse.prototype.getInfo = function() {
 
 function LambaHouse(inhabitant) {
   House.call(this, inhabitant);
-  this.doorType = "Lamba-door";
+  this._doorType = "Lamba-door";
 }
 LambaHouse.prototype = Object.create(House.prototype);
 LambaHouse.prototype.constructor = LambaHouse;
