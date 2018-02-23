@@ -1,26 +1,26 @@
 function House(inhabitant) {
   this._inhabitant = inhabitant;
-  this._doorType = "door";
-  this._doorIsOpened = false;
+  this.doorType = "door";
+  this._doorIsOpened = "closed";
 }
 House.prototype.openDoor = function() {
-  this._doorIsOpened = true;
+  this._doorIsOpened = "opened to the left";
 };
 House.prototype.closeDoor = function() {
-  this._doorIsOpened = false;
+  this._doorIsOpened = "closed to the right";
 };
 House.prototype.getInfo = function() {
   return (
     this._inhabitant +
     ' lives in the house with door type "' +
-    this._doorType +
+    this.doorType +
     '". Door opened:' +
     this._doorIsOpened
   );
 };
 
-function HorseHouse(owner, horseName) {
-  House.call(this, owner);
+function HorseHouse(inhabitant, horseName) {
+  House.call(this, inhabitant);
   this._horsesIn = horseName ? [horseName] : [];
 }
 HorseHouse.prototype = Object.create(House.prototype);
@@ -40,10 +40,17 @@ HorseHouse.prototype.getInfo = function() {
 
 function LambaHouse(inhabitant) {
   House.call(this, inhabitant);
-  this._doorType = "Lamba-door";
+  this.doorType = "Lamba-door";
 }
 LambaHouse.prototype = Object.create(House.prototype);
 LambaHouse.prototype.constructor = LambaHouse;
+LambaHouse.prototype.openDoor = function() {
+  this._doorIsOpened = 'opened up';
+};
+LambaHouse.prototype.closeDoor = function() {
+  this._doorIsClosed = 'closed down';
+};
+  
 
 var myHomeWithHorse = new HorseHouse("Kseniia", "Strelka");
 myHomeWithHorse.setHorse("Belka");
